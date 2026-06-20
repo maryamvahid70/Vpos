@@ -51,7 +51,7 @@ export class LoginComponent {
   }
 
   constructor(private swal: SwalService, private router: Router, private http: HttpClient, public responsiveService: ResponsiveService) {
-   }
+  }
 
   ngOnInit() {
     const clientVersion = localStorage.getItem("version");
@@ -335,19 +335,39 @@ export class LoginComponent {
     this.getCaptcha(this.form);
     this.otpShow = false;
   }
+  terminalInfo = {
+    MerchantAliasName: 'تعاونی مصرف کنندگان بانک کشاورزی'
+  };
+
+  voucherData = {
+    VoucherNumber: '6523216545',
+    FromPocketNumber: '645455454554',
+    VoucherTime: '14:02:00',
+    VoucherDate: '1405/03/30',
+    TerminalNumber: '65656665',
+    TransactionTypeTitle: 'نقدی',
+    Amount: '1650000'
+  }
 
   async testShare() {
-  if (navigator.share) {
-    try {
-      await navigator.share({
-        title: 'تست',
-        text: 'سلام',
-        url: window.location.href // پیشنهاد می‌شود URL را هم اضافه کنید
-      });
-      console.log('محتوا با موفقیت به اشتراک گذاشته شد');
-    } catch (e) {}
+    if (navigator.share) {
+      const text = `
+        رسید پرداخت ${this.terminalInfo.MerchantAliasName}
+        شماره سند: ${this.voucherData.VoucherNumber}
+        شماره جیب: ${this.voucherData.FromPocketNumber}
+        تاریخ و ساعت: ${this.voucherData.VoucherTime} | ${this.voucherData.VoucherDate}
+        شماره پایانه: ${this.voucherData.TerminalNumber}
+        نوع تراکنش: ${this.voucherData.TransactionTypeTitle}
+        مبلغ: ${this.voucherData.Amount}
+      `;
+      try {
+        await navigator.share({
+          title: 'رسید تراکنش گرین پی',
+          text
+        });
+      } catch (e) { }
+    }
   }
-}
 
 
 }
