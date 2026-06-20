@@ -1,0 +1,18 @@
+<div class="content">
+    <div class="icon">
+        <app-svg-icon [name]="'danger-triangle'" [size]="60"></app-svg-icon>
+    </div>
+    <div class="text">
+        <span>{{text}}</span>
+    </div>
+    <div class="desc">
+        <span>{{desc}}</span>
+    </div>
+    <div>
+        <div class="button" (click)="action.emit()">
+            <span>بازگشت به صفحه پذیرنده</span>
+            <span>|</span>
+            <span class="time-left">{{formatTime(timeLeft)}}</span>
+        </div>
+    </div>
+</div>

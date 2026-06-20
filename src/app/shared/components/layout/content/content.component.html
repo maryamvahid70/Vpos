@@ -1,0 +1,30 @@
+<div class="page-content">
+    <div *ngIf="!responsiveService.isMobile()" class="sidebar">
+        <app-sidebar></app-sidebar>
+    </div>
+    <div class="content-container" [class.mobile]="responsiveService.isMobile()">
+        <div class="header" [class.mobile]="responsiveService.isMobile()">
+            <div class="mobile-logo">
+                <img *ngIf="responsiveService.isMobile()" src="assets/images/logo.png" class="logo-img">
+                <img src="assets/images/mobile-green-pay.png">
+            </div>
+            <div *ngIf="!responsiveService.isMobile()" class="dot"></div>
+            <span class="txt3">پایانه مجازی پرداخـت در  فروشـگاه‌هـای طرف قرارداد </span>
+        </div>
+        <div [@fadeInAnimation]="getRouterOutletState(o)" class="route-content">
+            <router-outlet #o="outlet"></router-outlet>
+        </div>
+        <div *ngIf="!responsiveService.isMobile()" class="footer-container">
+            <div class="footer-item">
+                <span>تحلیل، طراحی و پیاده سازی در بخش توسعه پلتفرم شرکت گسترش فناوری های نوین </span>
+            </div>
+            <div class="footer-item">
+                <span class="callcenter">مرکز تماس</span>
+                <span class="phone">021-91009557</span>
+            </div>
+        </div>
+        <div *ngIf="responsiveService.isMobile()" class="sidebar mobile">
+            <app-sidebar></app-sidebar>
+        </div>
+    </div>
+</div>

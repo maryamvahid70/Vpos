@@ -1,0 +1,276 @@
+//-------- 2XSmall ------------
+
+@mixin text-2xs-regular {
+    font-size: var(--fs-2xs);
+    font-weight: 400;
+    line-height: auto;
+}
+
+@mixin text-2xs-medium {
+    font-size: var(--fs-2xs);
+    font-weight: 500;
+    line-height: auto;
+}
+
+@mixin text-2xs-semibold {
+    font-size: var(--fs-2xs);
+    font-weight: 600;
+    line-height: auto;
+}
+
+@mixin text-2xs-bold {
+    font-size: var(--fs-2xs);
+    font-weight: 700;
+    line-height: auto;
+}
+
+//-------- XSmall ------------
+
+@mixin text-xs-regular {
+    font-size: var(--fs-xs);
+    font-weight: 400;
+    line-height: var(--space-s);
+}
+
+@mixin text-xs-medium {
+    font-size: var(--fs-xs);
+    font-weight: 500;
+    line-height: var(--space-s);
+}
+
+@mixin text-xs-semibold {
+    font-size: var(--fs-xs);
+    font-weight: 600;
+    line-height: auto;
+}
+
+@mixin text-xs-bold {
+    font-size: var(--fs-xs);
+    font-weight: 700;
+    line-height: auto;
+}
+
+//-------- Small ------------
+
+@mixin text-s-light {
+    font-size: var(--fs-s);
+    font-weight: normal;
+    line-height: auto;
+}
+
+@mixin text-s-regular {
+    font-size: var(--fs-s);
+    font-weight: 400;
+    line-height: var(--space-m);
+}
+
+@mixin text-s-medium {
+    font-size: var(--fs-s);
+    font-weight: 500;
+    line-height: var(--space-xl);
+}
+
+@mixin text-s-semibold {
+    font-size: var(--fs-s);
+    font-weight: 600;
+    line-height: var(--space-xl);
+}
+
+@mixin text-s-bold {
+    font-size: var(--fs-s);
+    font-weight: 700;
+    line-height: auto;
+}
+
+//-------- Medium ------------
+
+@mixin text-m-light {
+    font-size: var(--fs-m);
+    font-weight: normal;
+    line-height: var(--space-xl);
+}
+
+@mixin text-m-regular {
+    font-size: var(--fs-m);
+    font-weight: 400;
+    line-height: auto;
+}
+
+@mixin text-m-medium {
+    font-size: var(--fs-m);
+    font-weight: 500;
+    line-height: var(--space-xl);
+}
+
+@mixin text-m-semibold {
+    font-size: var(--fs-m);
+    font-weight: 600;
+    line-height: var(--space-xl);
+}
+
+@mixin text-m-bold {
+    font-size: var(--fs-m);
+    font-weight: 700;
+    line-height: auto;
+}
+
+//-------- Large ------------
+
+@mixin text-l-light {
+    font-size: var(--fs-l);
+    font-weight: normal;
+    line-height: auto;
+}
+
+@mixin text-l-regular {
+    font-size: var(--fs-l);
+    font-weight: 400;
+    line-height: auto;
+}
+
+@mixin text-l-medium {
+    font-size: var(--fs-l);
+    font-weight: 500;
+    line-height: auto;
+}
+
+@mixin text-l-semibold {
+    font-size: var(--fs-l);
+    font-weight: 600;
+    line-height: auto;
+}
+
+@mixin text-l-bold {
+    font-size: var(--fs-l);
+    font-weight: 700;
+    line-height: auto;
+}
+
+//-------- XLarge ------------
+
+@mixin text-xl-light {
+    font-size: var(--fs-xl);
+    font-weight: normal;
+    line-height: auto;
+}
+
+@mixin text-xl-regular {
+    font-size: var(--fs-xl);
+    font-weight: 400;
+    line-height: auto;
+}
+
+@mixin text-xl-medium {
+    font-size: var(--fs-xl);
+    font-weight: 500;
+    line-height: auto;
+}
+
+@mixin text-xl-semibold {
+    font-size: var(--fs-xl);
+    font-weight: 600;
+    line-height: auto;
+}
+
+@mixin text-xl-bold {
+    font-size: var(--fs-xl);
+    font-weight: 700;
+    line-height: auto;
+}
+
+//-------- 2XLarge ------------
+
+@mixin text-2xl-light {
+    font-size: var(--fs-2xl);
+    font-weight: normal;
+    line-height: auto;
+}
+
+@mixin text-2xl-regular {
+    font-size: var(--fs-2xl);
+    font-weight: 400;
+    line-height: auto;
+}
+
+@mixin text-2xl-medium {
+    font-size: var(--fs-2xl);
+    font-weight: 500;
+    line-height: auto;
+}
+
+@mixin text-2xl-semibold {
+    font-size: var(--fs-2xl);
+    font-weight: 600;
+    line-height: auto;
+}
+
+@mixin text-2xl-bold {
+    font-size: var(--fs-2xl);
+    font-weight: 700;
+    line-height: auto;
+}
+
+//-------- 3XLarge ------------
+
+@mixin text-3xl-light {
+    font-size: var(--fs-3xl);
+    font-weight: normal;
+    line-height: auto;
+}
+
+@mixin text-3xl-regular {
+    font-size: var(--fs-3xl);
+    font-weight: 400;
+    line-height: auto;
+}
+
+@mixin text-3xl-medium {
+    font-size: var(--fs-3xl);
+    font-weight: 500;
+    line-height: auto;
+}
+
+@mixin text-3xl-semibold {
+    font-size: var(--fs-3xl);
+    font-weight: 600;
+    line-height: auto;
+}
+
+@mixin text-3xl-bold {
+    font-size: var(--fs-3xl);
+    font-weight: 700;
+    line-height: auto;
+}
+
+//-------- 4XLarge ------------
+
+@mixin text-4xl-light {
+    font-size: var(--fs-4xl);
+    font-weight: normal;
+    line-height: auto;
+}
+
+@mixin text-4xl-regular {
+    font-size: var(--fs-4xl);
+    font-weight: 400;
+    line-height: auto;
+}
+
+@mixin text-4xl-medium {
+    font-size: var(--fs-4xl);
+    font-weight: 500;
+    line-height: auto;
+}
+
+@mixin text-4xl-semibold {
+    font-size: var(--fs-4xl);
+    font-weight: 600;
+    line-height: auto;
+}
+
+@mixin text-4xl-bold {
+    font-size: var(--fs-4xl);
+    font-weight: 700;
+    line-height: auto;
+}
+

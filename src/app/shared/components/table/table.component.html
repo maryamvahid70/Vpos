@@ -1,0 +1,85 @@
+<div class="d-flex flex-column parent position-relative">
+    <div class="table-overlay" *ngIf="isLoading">
+        <div class="spinner"></div>
+    </div>
+    <div *ngIf="data?.TotalCount" class="table-responsive flex-grow-1">
+        <table class="custom-table-style table">
+            <thead>
+                <tr>
+                    <!-- <th>ردیف</th> -->
+                    <th *ngFor="let col of columns">{{col.Title}}</th>
+                    <th *ngFor="let extraCol of extraColumns">{{extraCol.title}}</th>
+                    <th *ngIf="allActions.length"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <ng-container
+                    *ngFor="let item of data.List | paginate : { id: 'pager', itemsPerPage: pageSize,currentPage: pageNumber, totalItems: data.TotalCount}; let i = index;">
+                    <tr>
+                        <!-- <td>{{(pageNumber - 1) * pageSize + (i + 1)}}</td> -->
+                        <td *ngFor="let col of columns;">
+
+                            <ng-container *ngIf="col.TemplateRef">
+
+                                <ng-container   *ngTemplateOutlet="col.TemplateRef , context:{item: item}"></ng-container>
+                            </ng-container>
+                            <ng-container *ngIf="!col.TemplateRef">
+
+                                <span>{{ col.Key === 'Amount' ? (item[col.Key] | number) : item[col.Key] }}</span>
+                            </ng-container>
+                        </td>
+                        <td *ngFor="let extraCol of extraColumns">
+                            <ng-container *ngIf="!useCheckboxInsteadOfSwitcher; else checkboxTemplate">
+                                <app-switcher [type]="extraCol.type" [(ngModel)]="item[extraCol.key]"
+                                    (ngModelChange)="onButtonAction({data: item, action:extraCol.action})"
+                                    [isDisabled]="extraCol.disabled">
+                                </app-switcher>
+                            </ng-container>
+
+                            <ng-template #checkboxTemplate>
+                                <div class="form-checkbox-container">
+                                    <div class="custom-checkbox-style">
+                                        <input type="checkbox" [id]="extraCol.key + '_' + i" [name]="extraCol.key"
+                                            [(ngModel)]="item[extraCol.key]"
+                                            (ngModelChange)="onButtonAction({data: item, action:extraCol.action})"
+                                            [disabled]="extraCol.disabled"
+                                            [ngClass]="{'disabled-checkbox': extraCol.disabled}" />
+                                    </div>
+                                </div>
+                            </ng-template>
+                        </td>
+                        <ng-container>
+
+                        </ng-container>
+                        <td *ngIf="allActions.length">
+                            <div class="d-flex align-items-center gap-2">
+                                <button [class.flex-row-reverse]="action.leftIcon" *ngFor="let action of allActions"
+                                    [ngbTooltip]="action.type == 'iconic' ? action.title : ''" placement="bottom"
+                                    triggers="hover" class="d-flex align-items-center btn btn-custom"
+                                    [ngClass]="['btn', action.type === 'iconic' ? 'btn-icon' : '', 'btn-' + (action.buttonColorType ? action.buttonColorType + '-' : '') + (action.type == 'text' || action.buttonColor ? action.buttonColor || 'primary' : ''), 'btn-' + (action.type == 'text' ? action.buttonSize || 'sm' : ''), 'order-' + (action.order ? action.order : '')]"
+                                    (click)="onButtonAction({data: item, action:action.action})">
+                                    <span *ngIf="action.icon">
+                                        <app-svg-icon [name]="action.icon"
+                                            [size]="action.type == 'iconic' ? 20 : 18"></app-svg-icon>
+                                    </span>
+                                    <span *ngIf="action.type == 'text'">
+                                        {{action.title}}
+                                    </span>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                </ng-container>
+            </tbody>
+        </table>
+    </div>
+    <div class="col-no-data" *ngIf="data?.TotalCount === 0">
+        <div class="no-data">
+            <app-no-data [imageWidth]="'9.4375rem'" [imageHeight]="'7.4375rem'"></app-no-data>
+        </div>
+    </div>
+
+    <app-pagination *ngIf="showPagination && !isLoading && data?.TotalCount" [id]="'pager'" [pageNumber]="pageNumber"
+        [pageSize]="pageSize" (onPaginationChange)="onPaginateChange($event)"></app-pagination>
+
+</div>

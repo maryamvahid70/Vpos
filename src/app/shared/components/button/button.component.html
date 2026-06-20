@@ -1,0 +1,5 @@
+<button class="btn btn-{{buttonSize}}" [class.just-icon]="label === ''" [class.w-100]="fullWidth" [disabled]="disabled" [ngClass]="colorMode === 'solid' ? 'btn-' + color: 'btn-' + colorMode + '-' + color" (click)="onClick($event)" [type]="type" [class.no-transition]="noTransition" [ngStyle]="{'width': width ? width+'rem' : 'unset', 'padding': width ? 'unset': null}">
+    <app-svg-icon *ngIf="showIcon && !loading" [name]="iconName" [size]="iconSize" [ngClass]="iconDirection == 'right' ? 'order-1' : 'order-2'"></app-svg-icon>
+    <span [ngClass]="iconDirection == 'right' ? 'order-2' : 'order-1'">{{label}}</span>
+    <span *ngIf="loading" class="spinner-border spinner-border-sm icon" role="status" aria-hidden="true"></span>
+</button>

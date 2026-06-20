@@ -1,0 +1,125 @@
+<div class="calendar-container">
+    
+    <div class="navigation">
+        <div class="now" >
+            <ng-container *ngIf="!showDaysCountError">
+                <div class="dates">
+                    <div class="jalali-date"> 
+                        <div>{{days[0].MonthName}}</div> 
+                        <div>{{days[0].YearKey}}</div>
+                    </div>
+                    <div class="greg-date" *ngIf="showGregDate"><span>{{days[0].GregMonthName}}</span> <span *ngIf="days[0].GregYearKey != days[days.length - 1].GregYearKey">{{days[0].GregYearKey}}</span> - <span>{{days[days.length - 1].GregMonthName}}</span> <span>{{days[days.length - 1].GregYearKey}}</span></div>
+                </div>
+                <div class="trigger" [class.up]="showBody" *ngIf="showToggleCalendar" (click)="onToggleShowBodySelected()">
+                    <app-svg-icon [name]="'alt-arrow-down'"></app-svg-icon>
+                </div>
+            </ng-container>
+        </div>
+       
+        <div class="filter-section" *ngIf="showFilterSection" [@slideDown]>
+            <div class="filter-head">
+                <div class="head-title"><app-svg-icon class="me-1" [name]="'calendar-minimalistic'" [size]="16"></app-svg-icon>فیلتر بر اساس سال و ماه</div>
+                <div class="head-close-btn" (click)="cancleFilter()">
+                    <app-svg-icon [name]="'close'" [size]="20"></app-svg-icon>
+                </div>
+            </div>
+            <div class="filter-content">
+                <div>
+                    <div class="title">انتخاب ماه:</div>
+                    <div class="month-navigation">
+                        <div class="month-list">
+                            <div class="item" (click)="selectMonth(item.index)" [class.active]="item.index == filterMonthValue" *ngFor="let item of monthList">
+                                {{item.title}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="title">
+                        <div>انتخاب سال:</div>
+                        <div class="year-page-navigation">
+                            <span role="button" class="previous-year-page" [class.disabled]="yearPageNumber == 1" (click)="loadPreviousYearPage()"><app-svg-icon [name]="'alt-arrow-right'" [size]="16"></app-svg-icon>صفحه قبلی </span>
+                            <span role="button" class="next-year-page" [class.disabled]="yearPageNumber>=yearTotalPageCount" (click)="loadNextYearPage()">صفحه بعدی <app-svg-icon [name]="'alt-arrow-left'" [size]="16"></app-svg-icon></span>
+                        </div>
+                    </div>
+                    <div class="year-navigation">
+                    <div class="year-list">
+                        <div class="item" (click)="selectYear(item)" [class.active]="item == filterYearValue" *ngFor="let item of slicedYearList">{{item}}</div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            <div class="filter-footer">
+                <div class="action-button" (click)="cancleFilter()"><app-svg-icon [name]="'close'" [size]="20"></app-svg-icon>انصراف</div>
+                <div class="action-button" (click)="applyFilter()"><app-svg-icon [name]="'unread'" [size]="20"></app-svg-icon>تایید</div>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="showBody" [@slideDown]>
+        <div class="navigation-btns">
+            <div class="refresh-calendar" (click)="refresh()">
+                <app-svg-icon [name]="'refresh'" [size]="20"></app-svg-icon>
+            </div>
+            <div class="filter-sign" [class.active]="showFilterSection" (click)="openFilterSection()">
+                <app-svg-icon [name]="'calendar-search'" [size]="20"></app-svg-icon>
+            </div>
+            <div class="previous-month" (click)="navigateToPreviousMonth()">
+                <app-svg-icon [name]="'alt-arrow-right'" [size]="20"></app-svg-icon>
+            </div>
+            <div class="next-month" (click)="navigateToNextMonth()">
+                <app-svg-icon [name]="'alt-arrow-left'" [size]="20"></app-svg-icon>
+            </div>
+        </div>
+        <div class="head">
+            <div class="day-name">{{ dayNamesType == 'short' ? 'ش' : 'شنبه'}}</div>
+            <div class="day-name">{{ dayNamesType == 'short' ? 'ی' : 'یکشنبه'}}</div>
+            <div class="day-name">{{ dayNamesType == 'short' ? 'د' : 'دوشنبه'}}</div>
+            <div class="day-name">{{ dayNamesType == 'short' ? 'س' : 'سه‌شنبه'}}</div>
+            <div class="day-name">{{ dayNamesType == 'short' ? 'چ' : 'چهارشنبه'}}</div>
+            <div class="day-name">{{ dayNamesType == 'short' ? 'پ' : 'پنجشنبه'}}</div>
+            <div class="day-name">{{ dayNamesType == 'short' ? 'ج' : 'جمعه'}}</div>
+        </div>
+        <div class="body">
+            <div class="loading" *ngIf="isLoading && !hasError && !showDaysCountError"></div>
+            <div class="error-container" *ngIf="hasError || showDaysCountError">داده معتبری جهت نمایش موجود نیست</div>
+            <ng-container *ngIf="!hasError">
+                <div class="day" [attr.role]="isDayFilterable ? 'button' : ''" (click)="isDayFilterable && onDaySelected(day)" [ngStyle]="{'grid-column-start' : day.DayOfWeekKey }" [class.can-edit]="editable" [class.is-editing]="day.DayKey == this.requestEditDay.DayKey" *ngFor="let day of days; let i = index" [class.today]="day.YearKey == nowDate[0] && day.MonthKey == nowDate[1] && day.DayKey == nowDate[2]" [class.is-off]="day.IsHoliday">                <div class="values">
+                        <div class="jalali-value" #editDayTrigger (click)="editable && openEditForm($event, day, i)">{{day.DayKey}}</div>
+                        <!-- <div class="greg-value">{{day.GregDayKey}}</div> -->
+                    </div>
+                </div>
+            </ng-container>
+        </div>
+    </div>
+</div>
+<div class="events" *ngIf="showEvents && events.length">
+    <div class="title">مناسبت های این ماه:</div> 
+    <div class="items">
+        <div class="item" [class.is-holiday]="event.IsHoliday" *ngFor="let event of events"><span class="event-day-key">{{event.DayKey}}</span>{{event.Events}}</div>
+    </div>
+</div>
+<div class="edit-date-form-wrapper" [@fade] *ngIf="showEditForm" [style.top]="editFormPosition.top" [style.left]="editFormPosition.left">
+    <ng-container *ngTemplateOutlet="editDateForm"></ng-container>
+</div>
+<ng-template #editDateForm>
+    <div class="edit-date-form" >
+        <form id="editDay" #editDayForm="ngForm" (ngSubmit)="onUpdateDay()">
+            <div class="status-toggler">
+                <div class="radio-container"><input type="radio" name="dayStatus" [value]='true' [(ngModel)]="requestEditDay.IsHoliday" />تعطیل</div>
+                <div class="radio-container"><input type="radio" name="dayStatus" [value]="false" [(ngModel)]="requestEditDay.IsHoliday" />غیر تعطیل</div>
+            </div>
+            <input maxlength="1000" type="text" #Events="ngModel" [class.invalid]="editDayForm.submitted && Events.invalid" [required]="requestEditDay.IsHoliday" name="dayEvent" class="form-control" placeholder="توضیحات" [(ngModel)]="requestEditDay.Events" />
+            <div class="action-buttons">
+                <button class="btn" type="button" (click)="closeEditForm()">
+                    <app-svg-icon [name]="'x'"></app-svg-icon>
+                    انصراف
+                </button>
+                <button class="btn" type="submit" >
+                    <app-svg-icon [name]="'check-read'"></app-svg-icon>
+                    تایید
+                </button>
+            </div>
+
+        </form>
+    </div>
+</ng-template>

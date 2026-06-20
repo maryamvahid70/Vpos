@@ -1,0 +1,45 @@
+.loading-wrapper {
+    position: fixed;
+    inset: 0;
+    background: var(--white);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 2rem;
+    background-image: url(../../../../assets/images/background.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    font-size: var(--fs-l);
+}
+
+.progress-bar {
+    width: 30%;
+    height: .75rem;
+    background: var(--gray-200);
+    border-radius: 3.125rem;
+    overflow: hidden;
+    position: relative;
+}
+
+.progress-bar::after {
+    content: '';
+    position: absolute;
+    left: -50%;
+    width: 50%;
+    height: 100%;
+    background: var(--primary);
+    animation: progress 1.2s infinite;
+}
+
+@keyframes progress {
+    from {
+        left: -50%;
+    }
+
+    to {
+        left: 100%;
+    }
+}

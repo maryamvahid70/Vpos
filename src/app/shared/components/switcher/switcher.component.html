@@ -1,0 +1,4 @@
+<div class="custom-switch-style {{type}}">
+    <input type="checkbox" name="switcher" [(ngModel)]="value" (ngModelChange)="handleInputChange($event)" (blur)="onTouched()" [disabled]="isDisabled">
+    <span class="switch-state"></span>
+</div>

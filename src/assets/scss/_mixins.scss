@@ -1,0 +1,39 @@
+@use "sass:meta";
+@use "sass:string";
+
+// Breakpoints
+$base-screen: 1440;
+
+@mixin fluid-font($min-font, $min-width: $base-screen) {
+  font-size: clamp(#{$min-font}rem,
+    calc(#{$min-font}rem * (100vw / #{$min-width}px)),
+    1000rem);
+}
+
+// Fluid Space (padding/margin/gap)
+@mixin fluid-space($property, $v1, $v2: null, $v3: null, $v4: null) {
+  $f1: if(meta.type-of($v1)=="string" and string.index($v1, "var("),
+      calc(#{$v1} * (100vw / #{$base-screen}px)),
+      clamp($v1 * 0.5rem, calc(#{$v1}rem * (100vw / #{$base-screen}px)), 1000rem));
+
+  $f2: if($v2 !=null,
+      if(meta.type-of($v2)=="string" and string.index($v2, "var("),
+        calc(#{$v2} * (100vw / #{$base-screen}px)),
+        clamp($v2 * 0.5rem, calc(#{$v2}rem * (100vw / #{$base-screen}px)), 1000rem)),
+      null);
+
+  $f3: if($v3 !=null,
+      if(meta.type-of($v3)=="string" and string.index($v3, "var("),
+        calc(#{$v3} * (100vw / #{$base-screen}px)),
+        clamp($v3 * 0.5rem, calc(#{$v3}rem * (100vw / #{$base-screen}px)), 1000rem)),
+      null);
+
+  $f4: if($v4 !=null,
+      if(meta.type-of($v4)=="string" and string.index($v4, "var("),
+        calc(#{$v4} * (100vw / #{$base-screen}px)),
+        clamp($v4 * 0.5rem, calc(#{$v4}rem * (100vw / #{$base-screen}px)), 1000rem)),
+      null);
+
+  #{$property}: #{$f1}#{if($f2 != null, " #{$f2}", " ")}#{if($f3 != null, "#{$f3}", " ")}#{if($f4 != null, "#{$f4}", " ")};
+
+}

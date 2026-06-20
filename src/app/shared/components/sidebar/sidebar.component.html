@@ -1,0 +1,27 @@
+<div class="sidebar-sec" [class.mobile]="responsiveService.isMobile()">
+    <div *ngIf="!responsiveService.isMobile()" class="top-logo">
+        <img src="assets/images/logo.png" class="logo">
+        <img src="assets/images/green-pay.png" class="name">
+    </div>
+
+    <div class="menu-sec">
+        <div class="menu-item" [class.active]="activeMenu === 'payment'" (click)="onClickMenu('payment')">
+            <app-svg-icon *ngIf="!responsiveService.isMobile()" [name]="'broken-money-card2'" [size]="36"></app-svg-icon>
+            <app-svg-icon *ngIf="responsiveService.isMobile()" [name]="'broken-money-card2'" [size]="24"></app-svg-icon>
+            <span *ngIf="responsiveService.isMobile()">پرداخت</span>
+        </div>
+        <div class="menu-item" [class.active]="activeMenu === 'invoice'" (click)="onClickMenu('invoice')">
+            <app-svg-icon *ngIf="!responsiveService.isMobile()" [name]="'broken-money-bill'" [size]="36"></app-svg-icon>
+            <app-svg-icon *ngIf="responsiveService.isMobile()" [name]="'broken-money-bill'" [size]="24"></app-svg-icon>
+            <span *ngIf="responsiveService.isMobile()">تراکنش ها</span>
+        </div>
+        <div class="menu-item ps-1" [class.active]="activeMenu === 'logout'" (click)="onClickMenu('logout')">
+            <app-svg-icon *ngIf="!responsiveService.isMobile()" [name]="'broken-arrow-logout2'" [size]="36"></app-svg-icon>
+            <app-svg-icon *ngIf="responsiveService.isMobile()" [name]="'broken-arrow-logout2'" [size]="24"></app-svg-icon>
+            <span *ngIf="responsiveService.isMobile()">خروج</span>
+        </div>
+    </div>
+
+    <img *ngIf="!responsiveService.isMobile()" src="assets/images/bank-color.png" class="bottom-logo">
+
+</div>

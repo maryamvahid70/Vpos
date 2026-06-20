@@ -1,0 +1,1 @@
+export type TableMainActions = 'edit' | 'remove' | 'view' | 'openFolder';

@@ -1,0 +1,32 @@
+button {
+    &.disabled {
+        pointer-events: none;
+    }
+
+    &.just-icon {
+        width: 2.5rem;
+        height: 2.5rem;
+        padding: 0;
+        display: unset !important;
+        text-align: -webkit-center;
+    }
+
+    .spinner-border {
+        margin-left: .5rem;
+    }
+}
+
+button.btn:disabled,
+button.btn.disabled {
+    pointer-events: none;
+    background: var(--gray-100) !important;
+    color: var(--gray-500) !important;
+    border-color: transparent !important;
+    opacity: 1 !important;
+}
+
+button:focus,
+button:active {
+    outline: none !important;
+    box-shadow: none !important;
+}

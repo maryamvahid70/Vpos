@@ -1,0 +1,38 @@
+<div class="card {{background}} {{backgroundType}}" [class.h-100]="hasFullHeight">
+    <div class="card-header p-0" *ngIf="showHeader">
+        <div class="d-flex align-items-center justify-content-between flex-wrap gap-3">
+            <div class="d-flex align-items-center gap-2">
+                <app-svg-icon [name]="cardTitleIcon" *ngIf="showCardTitleIcon && cardTitleIcon"></app-svg-icon>
+                <div *ngIf="typeof cardTitle === 'string'">
+                    {{ cardTitle }}
+                  </div>  
+                  <div *ngIf="typeof cardTitle === 'object' && cardTitle.parent !== ''">
+                    <span class="cardTitle-parent" >{{ cardTitle.parent }} /</span>
+                    <span class="cardTitle-child">{{ cardTitle.child }}</span>
+                  </div>
+            </div>
+            <div class="d-flex align-items-center flex-wrap" >
+                <ng-content ></ng-content>
+                <ng-container *ngIf="!hasCustomExtra">
+                    <div class="card box-user-info">
+                        <div class="card-box">
+                            <div class="item" *ngFor="let info of userInfo; let last = last">    {{ info }}    
+                                <div class="circle" *ngIf="!last">/</div>
+                            </div>
+                        </div>
+                    </div>
+                </ng-container>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<app-expandable-panel *ngIf="showMenu" [content]="actionsTemplate" [borderColor]="actionMenuBorderColor" [position]="actionMenuPosition" [excludeElement]="actionMenuTrigger.nativeElement" ClickOutside  (clickOutside)="onCloseMenu()"></app-expandable-panel>
+<ng-template #actionsTemplate>
+    <div class="action-menu">
+        <ul>
+            <li *ngFor="let item of actionMenuItems" (click)="item.action()"><app-svg-icon *ngIf="item.icon" [name]="item.icon" [size]="20"></app-svg-icon>{{item.title}}</li>
+        </ul>
+    </div>
+</ng-template>

@@ -1,0 +1,32 @@
+.no-date-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1.06rem;
+    font-weight: 500;
+
+    img {
+        aspect-ratio: 151/119;
+    }
+
+    .no-data-text {
+        color: var(--gray-10);
+        text-align: center;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 0.938rem !important;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .no-date-container {
+        div {
+            font-size: 1.1rem !important;
+        }
+
+        img {
+            // max-width: 200px !important;
+        }
+    }
+}

@@ -1,0 +1,55 @@
+.content {
+    text-align: -webkit-center;
+
+    .icon {
+        color: var(--error);
+        margin-bottom: var(--space-2xl);
+    }
+
+    .text { 
+        color: var(--gray-1000);
+        font-size: var(--fs-l);
+        font-weight: 600;
+        line-height: 2rem;
+        margin-bottom: var(--space-l);
+    }
+
+    .desc {
+        font-size: var(--fs-l);
+        line-height: 1.5rem;
+        color: var(--gray-900);
+        margin-bottom: var(--space-2xl);
+    }
+
+    .button {
+        border-radius: .75rem;
+        background-color: var(--error);
+        display: flex;
+        height: 3rem;
+        padding: 1rem 1.5rem;
+        justify-content: center;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: var(--fs-l);
+        font-weight: 600;
+        color: var(--white);
+        width: max-content;
+        cursor: pointer;
+
+        .time-left{
+            width: 2.31rem;
+        }
+    }
+}
+
+
+::ng-deep {
+    .modal-content {
+        border-radius: 2.75rem !important;
+        padding: var(--space-2xl);
+    }
+
+    .modal-dialog {
+        max-width: max-content !important;
+    }
+}

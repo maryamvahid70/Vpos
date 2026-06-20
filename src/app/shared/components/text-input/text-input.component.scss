@@ -1,0 +1,58 @@
+.form-validation-password-messages.password-strength-messages {
+  font-size: 0.8rem;
+  margin: 0.5rem 0;
+
+  > * {
+    padding-right: 1rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    color: #ADADAD;
+    padding-top: 0.5rem;
+
+    &:before {
+      position: absolute;
+      right: 0;
+      font-size: 0.5rem;
+      font-family: bootstrap-icons;
+      // content: "\F287";
+      color: #ADADAD;
+      transition: (--transition);
+    }
+  }
+
+  div.invalid-message {
+    color: #DE3A3A;
+    &:before {
+      content: "\F287";
+      color: #DE3A3A;
+    }
+  }
+
+  div.valid-message {
+    padding-right: 0.75rem;
+    color: #28a148;
+    &:before {
+      position: absolute;
+      right: -0.5rem;
+      font-size: 1.1rem;
+      font-family: bootstrap-icons;
+      // content: "\F633";
+      color: #28a148;
+    }
+  }
+}
+
+// -------remove number arrow----------
+/* for Chrome, Safari, Edge, Opera */
+input.no-arrow::-webkit-outer-spin-button,
+input.no-arrow::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* for Firefox */
+input.no-arrow[type=number] {
+  -moz-appearance: textfield;
+}
+

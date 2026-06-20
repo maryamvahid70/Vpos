@@ -1,0 +1,237 @@
+//======================== Variables ==================================
+@use './styles/mixins';
+:root {
+
+   //Font Size
+    --fs-2xs: .5rem;
+    --fs-xs: .625rem;
+    --fs-s: .75rem;
+    --fs-m: .875rem;
+    --fs-l: 1rem;
+    --fs-xl: 1.125rem;
+    --fs-2xl: 1.25rem;
+    --fs-3xl: 1.5rem;
+    --fs-4xl: 1.75rem;
+    --fs-5xl: 2rem;
+    --fs-6xl: 2.5rem;
+    --fs-7xl: 3rem;
+
+    //Spacing
+    --space-2xs: .25rem;
+    --space-xs: .5rem;
+    --space-s: .75rem;
+    --space-m: 1rem;
+    --space-l: 1.25rem;
+    --space-xl: 1.5rem;
+    --space-2xl: 2rem;
+    --space-3xl: 2.5rem;
+    --space-4xl: 3rem;
+    --space-5xl: 3.5rem;
+    --space-6xl: 4rem;
+    --space-7xl: 4.5rem;
+    --space-8xl: 5rem;
+
+  --transition: all ease 0.3s;
+
+  --svg-stroke-color: var(--primary);
+  --svg-icon-size: 24;
+  --svg-icon-width: 24;
+  --svg-icon-height: 24;
+
+  --fontFamily: 'Peyda';
+
+  --header-height: 7.5625rem;
+  --footer-height: 4rem;
+
+  --white: #ffffff;
+  --black-text: #1A1A1A;
+  --black: #000;
+  --bg: #F8F8F8;
+
+  //Primary
+  --primary: #38785D;
+  --primary-10: #F5F8F8;
+  --primary-50: #E5F3ED;
+  --primary-100: #D4E7DF;
+  --primary-200: #C2DAD0;
+  --primary-300: #B1CEC2;
+  --primary-400: #A0C2B3;
+  --primary-500: #7DA997;
+  --primary-600: #5B917A;
+  --primary-700: #2D604A;
+  --primary-800: #224838;
+
+  //Secondary
+  --secondary: #2947F8;
+  --secondary-10: #F6F8FF;
+  --secondary-50: #EAEDFE;
+  --secondary-100: #D4DAFE;
+  --secondary-200: #BFC8FD;
+  --secondary-300: #A9B5FC;
+  --secondary-400: #7F91FB;
+  --secondary-500: #546CF9;
+  --secondary-600: #2139C6;
+  --secondary-700: #192B95;
+  --secondary-800: #101C63;
+
+  // gry
+  --gray-0: #F6F6F6;
+  --gray-50: #EDEDED;
+  --gray-100: #E4E4E4;
+  --gray-200: #DBDBDB;
+  --gray-300: #CACACA;
+  --gray-400: #B8B8B8;
+  --gray-500: #A6A6A6;
+  --gray-600: #888888;
+  --gray-700: #6B6B6B;
+  --gray-800: #4D4D4D;
+  --gray-900: #3E3E3E;
+  --gray-1000: #303030;
+
+
+  // error
+  --error: #BC0000;
+  --error-01: #FCECEC;
+  --error-02: #f8d8d8;
+  --error-03: #F3B8B8;
+  --error-04: #EE9999;
+  --error-05: #E97979;
+  --error-06: #E35A5A;
+  --error-07: #bd3131;
+  --error-08: #9B2929;
+
+  // warning
+  --warning-01: #FFFDF5;
+  --warning-02: #FFF6D6;
+  --warning-03: #FFEFB6;
+  --warning-04: #FFE895;
+  --warning-05: #FFE074;
+  --warning-06: #FFD954;
+  --warning-07: #ecc330;
+  --warning-08: #e4bc2e;
+
+  // success
+  --success-01: #EEF7F2;
+  --success-02: #E0F5E5;
+  --success-03: #C0E8C8;
+  --success-04: #9AD6A6;
+  --success-05: #71C783;
+  --success-06: #54BC6C;
+  --success-07: #219341;
+
+  // INFO 
+  --info-01: #F4F7FE;
+  --info-02: #E6EEFF;
+  --info-03: #B1C7F8;
+  --info-04: #8EAEF5;
+  --info-05: #6B95F1;
+  --info-06: #487CEE;
+  --info-07: #1F54C8;
+  --info-08: #1A45A5;
+
+  @media (max-width: 1000px) {
+    & {
+      --footer-height: 6rem;
+    }
+  }
+
+}
+
+@media (min-width: 1025px) {
+  :root {
+    //Font Size
+    --fs-2xs: .625rem;
+    --fs-xs: .75rem;
+    --fs-s: .875rem;
+    --fs-m: 1rem;
+    --fs-l: 1.125rem;
+    --fs-xl: 1.25rem;
+    --fs-2xl: 1.5rem;
+    --fs-3xl: 1.75rem;
+    --fs-4xl: 2rem;
+    --fs-5xl: 2.25rem;
+    --fs-6xl: 3rem;
+    --fs-7xl: 3.5rem;
+
+    //Spacing
+    --space-2xs: .5rem;
+    --space-xs: .75rem;
+    --space-s: 1rem;
+    --space-m: 1.25rem;
+    --space-l: 1.5rem;
+    --space-xl: 2rem;
+    --space-2xl: 3rem;
+    --space-3xl: 3.5rem;
+    --space-4xl: 4rem;
+    --space-5xl: 4.5rem;
+    --space-6xl: 5rem;
+    --space-7xl: 6rem;
+    --space-8xl: 8rem;
+  }
+}
+
+@media (min-width: 1441px) {
+  :root {
+    //Font Size
+    --fs-2xs: .75rem;
+    --fs-xs: .875rem;
+    --fs-s: 1rem;
+    --fs-m: 1.125rem;
+    --fs-l: 1.25rem;
+    --fs-xl: 1.5rem;
+    --fs-2xl: 1.75rem;
+    --fs-3xl: 2rem;
+    --fs-4xl: 2.25rem;
+    --fs-5xl: 2.5rem;
+    --fs-6xl: 3rem;
+    --fs-7xl: 3.5rem;
+
+    //Spacing
+    --space-2xs: .75rem;
+    --space-xs: 1rem;
+    --space-s: 1.25rem;
+    --space-m: 1.5rem;
+    --space-l: 2rem;
+    --space-xl: 2.5rem;
+    --space-2xl: 3.5rem;
+    --space-3xl: 4rem;
+    --space-4xl: 4.5rem;
+    --space-5xl: 5rem;
+    --space-6xl: 6rem;
+    --space-7xl: 8rem;
+    --space-8xl: 10rem;
+  }
+}
+
+@media (max-width: 1025px) {
+  :root {
+    //Font Size
+    --fs-2xs: .5rem;
+    --fs-xs: .625rem;
+    --fs-s: .75rem;
+    --fs-m: .875rem;
+    --fs-l: 1rem;
+    --fs-xl: 1.125rem;
+    --fs-2xl: 1.25rem;
+    --fs-3xl: 1.5rem;
+    --fs-4xl: 1.75rem;
+    --fs-5xl: 2rem;
+    --fs-6xl: 2.25rem;
+    --fs-7xl: 2.5rem;
+
+    //Spacing
+    --space-2xs: .25rem;
+    --space-xs: .5rem;
+    --space-s: .75rem;
+    --space-m: 1rem;
+    --space-l: 1.25rem;
+    --space-xl: 1.5rem;
+    --space-2xl: 2rem;
+    --space-3xl: 2.5rem;
+    --space-4xl: 3rem;
+    --space-5xl: 3.5rem;
+    --space-6xl: 4rem;
+    --space-7xl: 4.5rem;
+    --space-8xl: 5rem;
+  }
+}

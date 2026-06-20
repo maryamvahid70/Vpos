@@ -1,0 +1,403 @@
+@use '../../../../styles/mixins' as *;
+
+.main-login {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-image: url(../../../../assets/images/login-background.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    align-items: center;
+    padding: var(--space-xl);
+
+    .header {
+        color: var(--gray-700);
+        display: flex;
+        gap: .5rem;
+        align-self: self-end;
+
+        .label {
+            @include text-s-bold;
+        }
+
+        .value {
+            @include text-m-bold;
+        }
+    }
+}
+
+.footer {
+    color: var(--gray-700);
+    display: flex;
+    gap: 0.5rem;
+    flex-direction: column;
+    align-items: center;
+    font-size: var(--fs-xs);
+
+    .desc {
+        @include text-xs-medium;
+    }
+
+    .version {
+        @include text-xs-regular;
+    }
+
+    .mobile-footer {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+
+        .call-center {
+            display: flex;
+            align-items: center;
+
+            .icon {
+                color: var(--primary-500);
+
+                width: fit-content;
+            }
+
+            .value {
+                font-weight: 700;
+                margin-right: .25rem;
+            }
+        }
+    }
+}
+
+.content-sec {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    .content {
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+}
+
+.login-container {
+    background-color: var(--white);
+    border-radius: 1.5rem;
+    padding: var(--space-xl) var(--space-m);
+    display: flex;
+    flex-direction: column;
+
+
+    form {
+        gap: 3rem;
+        display: flex;
+        flex-direction: column;
+
+        .form {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-s);
+        }
+    }
+
+    .logo-sec {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        margin-bottom: 3rem;
+
+        .logo {
+            display: flex;
+            flex-direction: row;
+            gap: .5rem;
+            align-self: center;
+
+            img {
+                width: 2.5rem;
+                height: 2.5rem;
+            }
+        }
+
+        .name {
+            display: flex;
+            gap: .25rem;
+            color: var(--primary);
+            align-self: center;
+            align-items: end;
+            @include text-l-bold;
+
+            img {
+                width: 4.375rem;
+                height: 1.18rem;
+            }
+        }
+    }
+
+    .forget-pass {
+        margin-top: .5rem;
+        color: var(--gray-700);
+        cursor: pointer;
+        @include text-s-medium;
+    }
+}
+
+.captcha-sec {
+    display: flex;
+    position: relative;
+    align-items: center;
+
+    app-text-input {
+        width: 100%;
+    }
+
+    .captcha-code {
+        position: absolute;
+        left: .5rem;
+        width: 6.25rem;
+        height: 2.75rem;
+        cursor: pointer;
+    }
+
+    .re-captcha {
+        position: absolute;
+        left: 7.25rem;
+        cursor: pointer;
+    }
+}
+
+.terminalNo {
+    position: relative;
+
+    span {
+        position: absolute;
+        left: 20px;
+        top: 1rem;
+        color: var(--gray-800);
+        @include text-xl-semibold;
+    }
+
+    app-text-input {
+        ::ng-deep {
+            .form-group .input-wrapper input {
+                padding-left: 2.5rem !important;
+            }
+        }
+    }
+}
+
+.back-login {
+    @include text-s-medium;
+    color: var(--gray-500);
+    align-items: center;
+    display: flex;
+    justify-content: center;
+
+    app-svg-icon,
+    span {
+        width: fit-content;
+        padding: 0;
+        cursor: pointer;
+    }
+}
+
+.phone-ring {
+    display: inline-block;
+    animation: shake 1s infinite;
+    position: relative;
+    bottom: 2px;
+}
+
+@keyframes shake {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    20% {
+        transform: rotate(15deg);
+    }
+
+    40% {
+        transform: rotate(-15deg);
+    }
+
+    60% {
+        transform: rotate(10deg);
+    }
+
+    80% {
+        transform: rotate(-10deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+
+::ng-deep {
+    .password-toggle {
+        left: 20px !important;
+        top: 20px !important;
+    }
+}
+
+// ======================================OTP=========================================
+.otp-inputs-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    direction: ltr;
+
+    .otp-input {
+        width: 4rem;
+        height: 4rem !important;
+        border: 1px solid var(--gray-200) !important;
+        text-align: center;
+        font-size: 1.3rem;
+        border-radius: 8px !important;
+        background-color: var(--white);
+
+        &:active,
+        &:focus {
+            border-color: var(--primary);
+        }
+
+        &::placeholder {
+            color: var(--bs-gray-400);
+            font-size: 0.8rem;
+            text-align: center;
+        }
+
+        &+.otp-input {
+            margin-left: 1rem !important;
+        }
+    }
+}
+
+:host ::ng-deep .form-control.otp-input {
+
+    &:not([readonly]) {
+        border-color: var(--gray-200) !important;
+    }
+
+    &:not([readonly]):focus,
+    &:not([readonly]):active {
+        border-color: var(--primary) !important;
+    }
+
+    &.filled {
+        border-color: var(--primary) !important;
+    }
+}
+
+.otp-info {
+    color: var(--gray-700);
+    font-size: var(--fs-m);
+    font-weight: 500;
+    margin-top: 3rem;
+    text-align: center;
+}
+
+.otp-time {
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+
+    .remaining-time {
+        color: var(--gray-400);
+        margin-right: 0.5rem;
+        font-size: 1rem;
+    }
+
+    .repet-sec {
+        display: flex;
+        justify-content: center;
+            font-size: var(--fs-m);
+
+        .time {
+            min-width: 4rem;
+            text-align: left;
+        }
+    }
+}
+
+.content-otp {
+    max-width: 600px;
+}
+
+.send-again {
+    color: var(--gray-400);
+    cursor: not-allowed;
+}
+
+.send-again.active-btn {
+    color: var(--primary);
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.btn-otp-time {
+    border: none;
+    border-right: 2px solid var(--gray-500);
+    margin-right: 5px;
+    background-color: unset !important;
+}
+
+.time-primary {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--primary) !important;
+}
+
+.time-gray {
+    color: var(--gray-400);
+    font-size: 14px;
+    font-weight: 500;
+}
+
+//--------------------------------------------------------------
+
+@media (max-width: 1024px) {
+
+    .captcha-code {
+        height: 2.125rem !important;
+    }
+
+    .captcha-sec {
+        margin-bottom: 1.63rem;
+    }
+
+    .terminalNo {
+        span {
+            top: 0.9rem;
+        }
+    }
+
+    .otp-inputs-container {
+        .otp-input {
+            width: 3.4rem;
+            height: 3.4rem !important;
+
+            &+.otp-input {
+                margin-left: .25rem !important;
+            }
+        }
+    }
+}
+
+@media (min-width: 1025px) {
+    .content {
+        width: 31.625rem;
+    }
+
+    .login-container {
+        padding: var(--space-xl);
+    }
+
+    @media (max-width: 1440px) {
+        .terminalNo {
+            span {
+                left: 10px;
+                top: 1.1rem;
+            }
+        }
+    }
+}

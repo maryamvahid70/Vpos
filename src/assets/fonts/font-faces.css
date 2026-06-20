@@ -1,0 +1,566 @@
+@font-face {
+    font-family: "IranYekan";
+    src: url("./iran-yekan/iran-yekan-300.eot");
+    src: url("./iran-yekan/iran-yekan-300.eot?#iefix") format("embedded-opentype"),
+      url("./iran-yekan/iran-yekan-300.woff2") format("woff2"),
+      url("./iran-yekan/iran-yekan-300.woff") format("woff"),
+       url("./iran-yekan/iran-yekan-300.ttf") format("truetype");
+    font-weight: 300;
+}
+  
+@font-face {
+font-family: "IranYekan";
+src: url("./iran-yekan/iran-yekan-400.eot");
+src: url("./iran-yekan/iran-yekan-400.eot?#iefix") format("embedded-opentype"),
+    url("./iran-yekan/iran-yekan-400.woff2") format("woff2"),
+    url("./iran-yekan/iran-yekan-400.woff") format("woff"),
+    url("./iran-yekan/iran-yekan-400.ttf") format("truetype");
+font-weight: 400;
+}
+
+@font-face {
+font-family: "IranYekan";
+src: url("./iran-yekan/iran-yekan-500.eot");
+src: url("./iran-yekan/iran-yekan-500.eot?#iefix") format("embedded-opentype"),
+    url("./iran-yekan/iran-yekan-500.woff2") format("woff2"),
+    url("./iran-yekan/iran-yekan-500.woff") format("woff"),
+    url("./iran-yekan/iran-yekan-500.ttf") format("truetype");
+font-weight: 500;
+}
+
+@font-face {
+font-family: "IranYekan";
+src: url("./iran-yekan/iran-yekan-700.eot");
+src: url("./iran-yekan/iran-yekan-700.eot?#iefix") format("embedded-opentype"),
+    url("./iran-yekan/iran-yekan-700.woff2") format("woff2"),
+    url("./iran-yekan/iran-yekan-700.woff") format("woff"),
+    url("./iran-yekan/iran-yekan-700.ttf") format("truetype");
+font-weight: 700;
+}
+
+@font-face {
+font-family: "IranYekan";
+src: url("./iran-yekan/woff2/IRANYekanWebExtraBold.woff2");
+src: url("./iran-yekan/eot/IRANYekanWebExtraBold.eot") format("embedded-opentype"),
+    url("./iran-yekan/woff2/IRANYekanWebExtraBold.woff2") format("woff2"),
+    url("./iran-yekan/woff/IRANYekanWebExtraBold.woff") format("woff"),
+    url("./iran-yekan/ttf/IRANYekanWebExtraBold.ttf") format("truetype");
+font-weight: 900;
+}
+
+@font-face {
+  font-family: "YekanBakh";
+  src:
+    url("./yekan-bakh/Fa-En/Yekan\ Bakh\ Fa-En\ 01\ Hairline.eot"),
+    url("./yekan-bakh/Fa-En/Yekan\ Bakh\ Fa-En\ 01\ Hairline.woff") format("woff"),
+    url("./yekan-bakh/Fa-En/Yekan\ Bakh\ Fa-En\ 01\ Hairline.ttf") format("truetype");
+  font-weight: 100;
+}
+@font-face {
+  font-family: "YekanBakh";
+  src: 
+    url("./yekan-bakh/Fa-En/Yekan\ Bakh\ Fa-En\ 02\ Thin.eot"),
+    url("./yekan-bakh/Fa-En/Yekan\ Bakh\ Fa-En\ 02\ Thin.woff") format("woff"),
+    url("./yekan-bakh/Fa-En/Yekan\ Bakh\ Fa-En\ 02\ Thin.ttf") format("truetype");
+  font-weight: 200;
+}
+@font-face {
+  font-family: "YekanBakh";
+  src: 
+    url("./yekan-bakh/Fa-En/Yekan\ Bakh\ Fa-En\ 03\ Light.eot"),
+    url("./yekan-bakh/Fa-En/Yekan\ Bakh\ Fa-En\ 03\ Light.woff") format("woff"),
+    url("./yekan-bakh/Fa-En/Yekan\ Bakh\ Fa-En\ 03\ Light.ttf") format("truetype");
+  font-weight: 300;
+}
+@font-face {
+  font-family: "YekanBakh";
+  src: 
+    url("./yekan-bakh/Fa-En/Yekan\ Bakh\ Fa-En\ 04\ Regular.eot"),
+    url("./yekan-bakh/Fa-En/Yekan\ Bakh\ Fa-En\ 04\ Regular.woff") format("woff"),
+    url("./yekan-bakh/Fa-En/Yekan\ Bakh\ Fa-En\ 04\ Regular.ttf") format("truetype");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "YekanBakh";
+  src: 
+    url("./yekan-bakh/Fa-En/Yekan\ Bakh\ Fa-En\ 05\ Medium.eot"),
+    url("./yekan-bakh/Fa-En/Yekan\ Bakh\ Fa-En\ 05\ Medium.woff") format("woff"),
+    url("./yekan-bakh/Fa-En/Yekan\ Bakh\ Fa-En\ 05\ Medium.ttf") format("truetype");
+  font-weight: 500;
+}
+@font-face {
+  font-family: "YekanBakh";
+  src: 
+    url("./yekan-bakh/Fa-En/Yekan\ Bakh\ Fa-En\ 06\ Bold.eot"),
+    url("./yekan-bakh/Fa-En/Yekan\ Bakh\ Fa-En\ 06\ Bold.woff") format("woff"),
+    url("./yekan-bakh/Fa-En/Yekan\ Bakh\ Fa-En\ 06\ Bold.ttf") format("truetype");
+  font-weight: 600;
+}
+@font-face {
+  font-family: "YekanBakh";
+  src: 
+    url("./yekan-bakh/Fa-En/Yekan\ Bakh\ Fa-En\ 07\ Heavy.eot"),
+    url("./yekan-bakh/Fa-En/Yekan\ Bakh\ Fa-En\ 07\ Heavy.woff") format("woff"),
+    url("./yekan-bakh/Fa-En/Yekan\ Bakh\ Fa-En\ 07\ Heavy.ttf") format("truetype");
+  font-weight: 700;
+}
+@font-face {
+  font-family: "YekanBakh";
+  src:
+    url("./yekan-bakh/Fa-En/Yekan\ Bakh\ Fa-En\ 08\ Fat.eot"),
+    url("./yekan-bakh/Fa-En/Yekan\ Bakh\ Fa-En\ 08\ Fat.woff") format("woff"),
+    url("./yekan-bakh/Fa-En/Yekan\ Bakh\ Fa-En\ 08\ Fat.ttf") format("truetype");
+  font-weight: 800;
+}
+@font-face {
+  font-family: "YekanBakh";
+  src:
+    url("./yekan-bakh/Fa/Yekan\ Bakh\ Fa\ 01\ Hairline.eot"),
+    url("./yekan-bakh/Fa/Yekan\ Bakh\ Fa\ 01\ Hairline.woff") format("woff"),
+    url("./yekan-bakh/Fa/Yekan\ Bakh\ Fa\ 01\ Hairline.ttf") format("truetype");
+  font-weight: 100;
+}
+@font-face {
+  font-family: "YekanBakh";
+  src:
+    url("./yekan-bakh/Fa/Yekan\ Bakh\ Fa\ 02\ Thin.eot"),
+    url("./yekan-bakh/Fa/Yekan\ Bakh\ Fa\ 02\ Thin.woff") format("woff"),
+    url("./yekan-bakh/Fa/Yekan\ Bakh\ Fa\ 02\ Thin.ttf") format("truetype");
+  font-weight: 200;
+}
+@font-face {
+  font-family: "YekanBakh";
+  src:
+    url("./yekan-bakh/Fa/Yekan\ Bakh\ Fa\ 03\ Light.eot"),
+    url("./yekan-bakh/Fa/Yekan\ Bakh\ Fa\ 03\ Light.woff") format("woff"),
+    url("./yekan-bakh/Fa/Yekan\ Bakh\ Fa\ 03\ Light.ttf") format("truetype");
+  font-weight: 300;
+}
+@font-face {
+  font-family: "YekanBakh";
+  src:
+    url("./yekan-bakh/Fa/Yekan\ Bakh\ Fa\ 04\ Regular.eot"),
+    url("./yekan-bakh/Fa/Yekan\ Bakh\ Fa\ 04\ Regular.woff") format("woff"),
+    url("./yekan-bakh/Fa/Yekan\ Bakh\ Fa\ 04\ Regular.ttf") format("truetype");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "YekanBakh";
+  src:
+    url("./yekan-bakh/Fa/Yekan\ Bakh\ Fa\ 05\ Medium.eot"),
+    url("./yekan-bakh/Fa/Yekan\ Bakh\ Fa\ 05\ Medium.woff") format("woff"),
+    url("./yekan-bakh/Fa/Yekan\ Bakh\ Fa\ 05\ Medium.ttf") format("truetype");
+  font-weight: 500;
+}
+@font-face {
+  font-family: "YekanBakh";
+  src:
+    url("./yekan-bakh/Fa/Yekan\ Bakh\ Fa\ 06\ Bold.eot"),
+    url("./yekan-bakh/Fa/Yekan\ Bakh\ Fa\ 06\ Bold.woff") format("woff"),
+    url("./yekan-bakh/Fa/Yekan\ Bakh\ Fa\ 06\ Bold.ttf") format("truetype");
+  font-weight: 600;
+}
+@font-face {
+  font-family: "YekanBakh";
+  src:
+    url("./yekan-bakh/Fa/Yekan\ Bakh\ Fa\ 07\ Heavy.eot"),
+    url("./yekan-bakh/Fa/Yekan\ Bakh\ Fa\ 07\ Heavy.woff") format("woff"),
+    url("./yekan-bakh/Fa/Yekan\ Bakh\ Fa\ 07\ Heavy.ttf") format("truetype");
+  font-weight: 700;
+}
+@font-face {
+  font-family: "YekanBakh";
+  src:
+    url("./yekan-bakh/Fa/Yekan\ Bakh\ Fa\ 08\ Fat.eot"),
+    url("./yekan-bakh/Fa/Yekan\ Bakh\ Fa\ 08\ Fat.woff") format("woff"),
+    url("./yekan-bakh/Fa/Yekan\ Bakh\ Fa\ 08\ Fat.ttf") format("truetype");
+  font-weight: 800;
+}
+@font-face {
+  font-family: "YekanBakh";
+  src:
+    url("./yekan-bakh/FaNum/Yekan\ Bakh\ FaNum\ 01\ Hairline.eot"),
+    url("./yekan-bakh/FaNum/Yekan\ Bakh\ FaNum\ 01\ Hairline.woff") format("woff"),
+    url("./yekan-bakh/FaNum/Yekan\ Bakh\ FaNum\ 01\ Hairline.ttf") format("truetype");
+  font-weight: 100;
+}
+@font-face {
+  font-family: "YekanBakh";
+  src:
+    url("./yekan-bakh/FaNum/Yekan\ Bakh\ FaNum\ 02\ Thin.eot"),
+    url("./yekan-bakh/FaNum/Yekan\ Bakh\ FaNum\ 02\ Thin.woff") format("woff"),
+    url("./yekan-bakh/FaNum/Yekan\ Bakh\ FaNum\ 02\ Thin.ttf") format("truetype");
+  font-weight: 200;
+}
+@font-face {
+  font-family: "YekanBakh";
+  src:
+    url("./yekan-bakh/FaNum/Yekan\ Bakh\ FaNum\ 03\ Light.eot"),
+    url("./yekan-bakh/FaNum/Yekan\ Bakh\ FaNum\ 03\ Light.woff") format("woff"),
+    url("./yekan-bakh/FaNum/Yekan\ Bakh\ FaNum\ 03\ Light.ttf") format("truetype");
+  font-weight: 300;
+}
+@font-face {
+  font-family: "YekanBakh";
+  src:
+    url("./yekan-bakh/FaNum/Yekan\ Bakh\ FaNum\ 04\ Regular.eot"),
+    url("./yekan-bakh/FaNum/Yekan\ Bakh\ FaNum\ 04\ Regular.woff") format("woff"),
+    url("./yekan-bakh/FaNum/Yekan\ Bakh\ FaNum\ 04\ Regular.ttf") format("truetype");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "YekanBakh";
+  src:
+    url("./yekan-bakh/FaNum/Yekan\ Bakh\ FaNum\ 05\ Medium.eot"),
+    url("./yekan-bakh/FaNum/Yekan\ Bakh\ FaNum\ 05\ Medium.woff") format("woff"),
+    url("./yekan-bakh/FaNum/Yekan\ Bakh\ FaNum\ 05\ Medium.ttf") format("truetype");
+  font-weight: 500;
+}
+@font-face {
+  font-family: "YekanBakh";
+  src:
+    url("./yekan-bakh/FaNum/Yekan\ Bakh\ FaNum\ 06\ Bold.eot"),
+    url("./yekan-bakh/FaNum/Yekan\ Bakh\ FaNum\ 06\ Bold.woff") format("woff"),
+    url("./yekan-bakh/FaNum/Yekan\ Bakh\ FaNum\ 06\ Bold.ttf") format("truetype");
+  font-weight: 600;
+}
+@font-face {
+  font-family: "YekanBakh";
+  src:
+    url("./yekan-bakh/FaNum/Yekan\ Bakh\ FaNum\ 07\ Heavy.eot"),
+    url("./yekan-bakh/FaNum/Yekan\ Bakh\ FaNum\ 07\ Heavy.woff") format("woff"),
+    url("./yekan-bakh/FaNum/Yekan\ Bakh\ FaNum\ 07\ Heavy.ttf") format("truetype");
+  font-weight: 700;
+}
+@font-face {
+  font-family: "YekanBakh";
+  src:
+    url("./yekan-bakh/FaNum/Yekan\ Bakh\ FaNum\ 08\ Fat.eot"),
+    url("./yekan-bakh/FaNum/Yekan\ Bakh\ FaNum\ 08\ Fat.woff") format("woff"),
+    url("./yekan-bakh/FaNum/Yekan\ Bakh\ FaNum\ 08\ Fat.ttf") format("truetype");
+  font-weight: 800;
+}
+
+@font-face {
+	font-family: Peyda;
+	font-style: normal;
+	font-weight: 100;
+	src: url('./Peyda/standard/woff2/PeydaWeb-Thin.woff2') format('woff2'),  /* FF39+,Chrome36+, Opera24+*/
+		 url('./Peyda/standard/woff/PeydaWeb-Thin.woff') format('woff');  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+}
+@font-face {
+	font-family: Peyda;
+	font-style: normal;
+	font-weight: 200;
+	src: url('./Peyda/standard/woff2/PeydaWeb-ExtraLight.woff2') format('woff2'),  /* FF39+,Chrome36+, Opera24+*/
+		 url('./Peyda/standard/woff/PeydaWeb-ExtraLight.woff') format('woff');  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+}
+@font-face {
+	font-family: Peyda;
+	font-style: normal;
+	font-weight: 300;
+	src: url('./Peyda/standard/woff2/PeydaWeb-Light.woff2') format('woff2'),  /* FF39+,Chrome36+, Opera24+*/
+		 url('./Peyda/standard/woff/PeydaWeb-Light.woff') format('woff');  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+}
+@font-face {
+	font-family: Peyda;
+	font-style: normal;
+	font-weight: normal;
+	src: url('./Peyda/standard/woff2/PeydaWeb-Regular.woff2') format('woff2'),  /* FF39+,Chrome36+, Opera24+*/
+		 url('./Peyda/standard/woff/PeydaWeb-Regular.woff') format('woff');  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+}
+@font-face {
+	font-family: Peyda;
+	font-style: normal;
+	font-weight: 500;
+	src: url('./Peyda/standard/woff2/PeydaWeb-Medium.woff2') format('woff2'),  /* FF39+,Chrome36+, Opera24+*/
+		 url('./Peyda/standard/woff/PeydaWeb-Medium.woff') format('woff');  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+}
+@font-face {
+	font-family: Peyda;
+	font-style: normal;
+	font-weight: 600;
+	src: url('./Peyda/standard/woff2/PeydaWeb-SemiBold.woff2') format('woff2'),  /* FF39+,Chrome36+, Opera24+*/
+		 url('./Peyda/standard/woff/PeydaWeb-SemiBold.woff') format('woff');  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+}
+
+@font-face {
+	font-family: Peyda;
+	font-style: normal;
+	font-weight: 800;
+	src: url('./Peyda/standard/woff2/PeydaWeb-ExtraBold.woff2') format('woff2'),  /* FF39+,Chrome36+, Opera24+*/
+		 url('./Peyda/standard/woff/PeydaWeb-ExtraBold.woff') format('woff');  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+}
+@font-face {
+	font-family: Peyda;
+	font-style: normal;
+	font-weight: 900;
+	src: url('./Peyda/standard/woff2/PeydaWeb-Black.woff2') format('woff2'),  /* FF39+,Chrome36+, Opera24+*/
+		 url('./Peyda/standard/woff/PeydaWeb-Black.woff') format('woff')  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+}
+@font-face {
+	font-family: Peyda;
+	font-style: normal;
+	font-weight: bold;
+	src: url('./Peyda/standard/woff2/PeydaWeb-Bold.woff2') format('woff2'),  /* FF39+,Chrome36+, Opera24+*/
+		 url('./Peyda/standard/woff/PeydaWeb-Bold.woff') format('woff');  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+}
+
+@font-face {
+	font-family: Peyda;
+	font-style: normal;
+	font-weight: 100;
+	src: url('./Peyda/nonEnglish/woff2/PeydaWebNoEn-Thin.woff2') format('woff2'),  /* FF39+,Chrome36+, Opera24+*/
+		 url('./Peyda/nonEnglish/woff/PeydaWebNoEn-Thin.woff') format('woff');  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+}
+@font-face {
+	font-family: Peyda;
+	font-style: normal;
+	font-weight: 200;
+	src: url('./Peyda/nonEnglish/woff2/PeydaWebNoEn-ExtraLight.woff2') format('woff2'),  /* FF39+,Chrome36+, Opera24+*/
+		 url('./Peyda/nonEnglish/woff/PeydaWebNoEn-ExtraLight.woff') format('woff');  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+}
+@font-face {
+	font-family: Peyda;
+	font-style: normal;
+	font-weight: 300;
+	src: url('./Peyda/nonEnglish/woff2/PeydaWebNoEn-Light.woff2') format('woff2'),  /* FF39+,Chrome36+, Opera24+*/
+		 url('./Peyda/nonEnglish/woff/PeydaWebNoEn-Light.woff') format('woff');  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+}
+@font-face {
+	font-family: Peyda;
+	font-style: normal;
+	font-weight: 500;
+	src: url('./Peyda/nonEnglish/woff2/PeydaWebNoEn-Medium.woff2') format('woff2'),  /* FF39+,Chrome36+, Opera24+*/
+		 url('./Peyda/nonEnglish/woff/PeydaWebNoEn-Medium.woff') format('woff');  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+}
+@font-face {
+	font-family: Peyda;
+	font-style: normal;
+	font-weight: 600;
+	src: url('./Peyda/nonEnglish/woff2/PeydaWebNoEn-SemiBold.woff2') format('woff2'),  /* FF39+,Chrome36+, Opera24+*/
+		 url('./Peyda/nonEnglish/woff/PeydaWebNoEn-SemiBold.woff') format('woff');  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+}
+@font-face {
+	font-family: Peyda;
+	font-style: normal;
+	font-weight: 800;
+	src: url('./Peyda/nonEnglish/woff2/PeydaWebNoEn-ExtraBold.woff2') format('woff2'),  /* FF39+,Chrome36+, Opera24+*/
+		 url('./Peyda/nonEnglish/woff/PeydaWebNoEn-ExtraBold.woff') format('woff');  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+}
+@font-face {
+	font-family: Peyda;
+	font-style: normal;
+	font-weight: 900;
+	src: url('./Peyda/nonEnglish/woff2/PeydaWebNoEn-Black.woff2') format('woff2'),  /* FF39+,Chrome36+, Opera24+*/
+		 url('./Peyda/nonEnglish/woff/PeydaWebNoEn-Black.woff') format('woff');  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+}
+@font-face {
+	font-family: Peyda;
+	font-style: normal;
+	font-weight: bold;
+	src: url('./Peyda/nonEnglish/woff2/PeydaWebNoEn-Bold.woff2') format('woff2'),  /* FF39+,Chrome36+, Opera24+*/
+		 url('./Peyda/nonEnglish/woff/PeydaWebNoEn-Bold.woff') format('woff');  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+}
+@font-face {
+	font-family: Peyda;
+	font-style: normal;
+	font-weight: normal;
+	src: url('./Peyda/nonEnglish/woff2/PeydaWebNoEn-Regular.woff2') format('woff2'),  /* FF39+,Chrome36+, Opera24+*/
+		 url('./Peyda/nonEnglish/woff/PeydaWebNoEn-Regular.woff') format('woff');  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+}
+
+@font-face {
+	font-family: Peyda;
+	font-style: normal;
+	font-weight: 100;
+	src: url('./Peyda/farsiNumerals/woff2/PeydaWebFaNum-Thin.woff2') format('woff2'),  /* FF39+,Chrome36+, Opera24+*/
+		 url('./Peyda/farsiNumerals/woff/PeydaWebFaNum-Thin.woff') format('woff');  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+}
+@font-face {
+	font-family: Peyda;
+	font-style: normal;
+	font-weight: 200;
+	src: url('./Peyda/farsiNumerals/woff2/PeydaWebFaNum-ExtraLight.woff2') format('woff2'),  /* FF39+,Chrome36+, Opera24+*/
+		 url('./Peyda/farsiNumerals/woff/PeydaWebFaNum-ExtraLight.woff') format('woff');  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+}
+@font-face {
+	font-family: Peyda;
+	font-style: normal;
+	font-weight: 300;
+	src: url('./Peyda/farsiNumerals/woff2/PeydaWebFaNum-Light.woff2') format('woff2'),  /* FF39+,Chrome36+, Opera24+*/
+		 url('./Peyda/farsiNumerals/woff/PeydaWebFaNum-Light.woff') format('woff');  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+}
+@font-face {
+	font-family: Peyda;
+	font-style: normal;
+	font-weight: 500;
+	src: url('./Peyda/farsiNumerals/woff2/PeydaWebFaNum-Medium.woff2') format('woff2'),  /* FF39+,Chrome36+, Opera24+*/
+		 url('./Peyda/farsiNumerals/woff/PeydaWebFaNum-Medium.woff') format('woff');  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+}
+@font-face {
+	font-family: Peyda;
+	font-style: normal;
+	font-weight: 600;
+	src: url('./Peyda/farsiNumerals/woff2/PeydaWebFaNum-SemiBold.woff2') format('woff2'),  /* FF39+,Chrome36+, Opera24+*/
+		 url('./Peyda/farsiNumerals/woff/PeydaWebFaNum-SemiBold.woff') format('woff');  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+}
+
+@font-face {
+	font-family: Peyda;
+	font-style: normal;
+	font-weight: 800;
+	src: url('./Peyda/farsiNumerals/woff2/PeydaWebFaNum-ExtraBold.woff2') format('woff2'),  /* FF39+,Chrome36+, Opera24+*/
+		 url('./Peyda/farsiNumerals/woff/PeydaWebFaNum-ExtraBold.woff') format('woff');  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+}
+@font-face {
+	font-family: Peyda;
+	font-style: normal;
+	font-weight: 900;
+	src: url('./Peyda/farsiNumerals/woff2/PeydaWebFaNum-Black.woff2') format('woff2'),  /* FF39+,Chrome36+, Opera24+*/
+		 url('./Peyda/farsiNumerals/woff/PeydaWebFaNum-Black.woff') format('woff');  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+}
+@font-face {
+	font-family: Peyda;
+	font-style: normal;
+	font-weight: bold;
+	src: url('./Peyda/farsiNumerals/woff2/PeydaWebFaNum-Bold.woff2') format('woff2'),  /* FF39+,Chrome36+, Opera24+*/
+		 url('./Peyda/farsiNumerals/woff/PeydaWebFaNum-Bold.woff') format('woff');  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+}
+@font-face {
+	font-family: Peyda;
+	font-style: normal;
+	font-weight: normal;
+  	src: url('./Peyda/farsiNumerals/woff2/PeydaWebFaNum-Regular.woff2') format('woff2'),  /* FF39+,Chrome36+, Opera24+*/
+		 url('./Peyda/farsiNumerals/woff/PeydaWebFaNum-Regular.woff') format('woff');  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+}
+
+@font-face {
+    font-family: "Kalame";
+    src: url("./kalame/standard/woff/KalamehWeb-Light.woff")
+        format("woff"),
+      url("./kalame/standard/woff2/KalamehWeb-Light.woff2")
+        format("woff2");
+    font-weight: 100;
+}
+@font-face {
+  font-family: "Kalame";
+  src: url("./kalame/standard/woff/KalamehWeb-Thin.woff")
+      format("woff"),
+    url("./kalame/standard/woff2/KalamehWeb-Thin.woff2")
+      format("woff2");
+  font-weight: 200;
+}
+@font-face {
+  font-family: "Kalame";
+  src: url("./kalame/standard/woff/KalamehWeb-Regular.woff")
+      format("woff"),
+    url("./kalame/standard/woff2/KalamehWeb-Regular.woff2")
+      format("woff2");
+  font-weight: 300;
+}
+@font-face {
+  font-family: "Kalame";
+  src: url("./kalame/standard/woff/KalamehWeb-Medium.woff")
+      format("woff"),
+    url("./kalame/standard/woff2/KalamehWeb-Medium.woff2")
+      format("woff2");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Kalame";
+  src: url("./kalame/standard/woff/KalamehWeb-SemiBold.woff")
+      format("woff"),
+    url("./kalame/standard/woff2/KalamehWeb-SemiBold.woff2")
+      format("woff2");
+  font-weight: 500;
+}
+@font-face {
+  font-family: "Kalame";
+  src: url("./kalame/standard/woff/KalamehWeb-Bold.woff")
+      format("woff"),
+    url("./kalame/standard/woff2/KalamehWeb-Bold.woff2")
+      format("woff2");
+  font-weight: 600;
+}
+@font-face {
+  font-family: "Kalame";
+  src: url("./kalame/standard/woff/KalamehWeb-ExtraBold.woff")
+      format("woff"),
+    url("./kalame/standard/woff2/KalamehWeb-ExtraBold.woff2")
+      format("woff2");
+  font-weight: 700;
+}
+@font-face {
+  font-family: "Kalame";
+  src: url("./kalame/standard/woff/KalamehWeb-Black.woff")
+      format("woff"),
+    url("./kalame/standard/woff2/KalamehWeb-Black.woff2")
+      format("woff2");
+  font-weight: 800;
+}
+
+@font-face {
+  font-family: "Kalame";
+  src: url("./kalame/numberals/woff/KalamehWebFaNum-Light.woff")
+      format("woff"),
+    url("./kalame/numberals/woff2/KalamehWebFaNum-Light.woff2")
+      format("woff2");
+  font-weight: 100;
+}
+@font-face {
+  font-family: "Kalame";
+  src: url("./kalame/numberals/woff/KalamehWebFaNum-Thin.woff")
+      format("woff"),
+    url("./kalame/numberals/woff2/KalamehWebFaNum-Thin.woff2")
+      format("woff2");
+  font-weight: 200;
+}
+@font-face {
+  font-family: "Kalame";
+  src: url("./kalame/numberals/woff/KalamehWebFaNum-Regular.woff")
+      format("woff"),
+    url("./kalame/numberals/woff2/KalamehWebFaNum-Regular.woff2")
+      format("woff2");
+  font-weight: 300;
+}
+@font-face {
+  font-family: "Kalame";
+  src: url("./kalame/numberals/woff/KalamehWebFaNum-Medium.woff")
+      format("woff"),
+    url("./kalame/numberals/woff2/KalamehWebFaNum-Medium.woff2")
+      format("woff2");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Kalame";
+  src: url("./kalame/numberals/woff/KalamehWebFaNum-SemiBold.woff")
+      format("woff"),
+    url("./kalame/numberals/woff2/KalamehWebFaNum-SemiBold.woff2")
+      format("woff2");
+  font-weight: 500;
+}
+@font-face {
+  font-family: "Kalame";
+  src: url("./kalame/numberals/woff/KalamehWebFaNum-Bold.woff")
+      format("woff"),
+    url("./kalame/numberals/woff2/KalamehWebFaNum-Bold.woff2")
+      format("woff2");
+  font-weight: 600;
+}
+@font-face {
+  font-family: "Kalame";
+  src: url("./kalame/numberals/woff/KalamehWebFaNum-ExtraBold.woff")
+      format("woff"),
+    url("./kalame/numberals/woff2/KalamehWebFaNum-ExtraBold.woff2")
+      format("woff2");
+  font-weight: 700;
+}
+@font-face {
+  font-family: "Kalame";
+  src: url("./kalame/numberals/woff/KalamehWebFaNum-Black.woff")
+      format("woff"),
+    url("./kalame/numberals/woff2/KalamehWebFaNum-Black.woff2")
+      format("woff2");
+  font-weight: 800;
+}

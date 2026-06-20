@@ -1,0 +1,4 @@
+<div class="badge badge-{{size}}" [ngClass]="colorMode === 'solid' ? 'badge-' + color : 'badge-' + colorMode + '-' + color">
+   <app-svg-icon *ngIf="showIcon" [name]="iconName" [size]="iconSize" [ngClass]="iconDirection == 'right' ? 'order-1' : 'order-2'"></app-svg-icon>
+    <span [ngClass]="iconDirection == 'right' ? 'order-2' : 'order-1'">{{label}}</span>
+</div>

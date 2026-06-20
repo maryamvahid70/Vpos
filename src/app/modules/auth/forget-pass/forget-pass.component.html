@@ -1,0 +1,58 @@
+<div class="main-login">
+    <div *ngIf="!responsiveService.isMobile()" class="header">
+        <span class="label">مرکز تماس</span>
+        <span class="value">021-91009557</span>
+    </div>
+
+    <div class="content-sec">
+        <div class="content">
+            <div class="login-container">
+                <form #resetForm="ngForm" (ngSubmit)="submit(resetForm)">
+                    <div class="logo-sec">
+                        <div class="logo">
+                            <img src="assets/images/bank-color.png">
+                            <img src="assets/images/logo.png">
+                        </div>
+                        <div class="name">
+                            <span>بازنشانی گذرواژه</span>
+                            <img src="assets/images/green-pay.png">
+                        </div>
+                    </div>
+                    <div class="form">
+
+                        <app-text-input #MerchantID  ="ngModel" [submitted]="resetForm.submitted" [required]="true" name="MerchantID " [(ngModel)]="form.MerchantID " [ltrDirection]="true" placeholder="شناسه پذیرنده" [maskType]="'number'" [required]="true"></app-text-input>
+
+                        <div class="terminalNo">
+                            <app-text-input #TerminalNumber="ngModel" [submitted]="resetForm.submitted" [required]="true" name="TerminalNumber" [(ngModel)]="form.TerminalNumber" [ltrDirection]="true" placeholder="شماره پایانه" [maskType]="'number'"></app-text-input>
+                            <span>T</span>
+                        </div>
+                        <app-text-input #cellphone="ngModel" [submitted]="resetForm.submitted" [required]="true" name="cellphone" [(ngModel)]="form.Cellphone" [ltrDirection]="true" placeholder="شماره موبایل" [maskType]="'cellphone'"></app-text-input>
+                        <div class="captcha-sec">
+                            <app-text-input #captcha="ngModel" [submitted]="resetForm.submitted" [isCaptcha]="true" [required]="true" [animatedLabel]="false" name="Title" [(ngModel)]="form.CaptchaWord" [persianLettersOnly]="false" [ltrDirection]="true" [maskType]="'number'" placeholder="عبارت امنیتی"></app-text-input>
+                             <img src="{{captchaImage}}" (click)="getCaptcha(form)" class="captcha-code" />
+                            <app-svg-icon [name]="'refresh'" [size]="24" (click)="getCaptcha(form)" class="re-captcha"></app-svg-icon>
+                        </div>
+                    </div>
+                    <app-button  [label]="!isLoadForm ? 'بازنشانی گذرواژه' : 'در حال پردازش؛ شکیبا باشید'" [disabled]="isLoadForm" [loading]="isLoadForm" [showIcon]="true" [iconName]="'broken-arrow-left'" [fullWidth]="true" [type]="'submit'" [iconSize]="24" [iconDirection]="'left'" [buttonSize]="'lg'" (buttonClick)="changePass()"></app-button>
+                </form>
+                <span class="forget-pass" (click)="goToLogin()">بازگشت به صفحه ورود</span>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="desc">تحلیل، طراحــی و پیـاده ســـازی در واحـد توســعه پلتفـرم شــرکـت گسـترش فناوری هـای نویـن </div>
+            <div *ngIf="!responsiveService.isMobile()" class="version">{{fullVersion}}</div>
+            <div *ngIf="responsiveService.isMobile()" class="mobile-footer">
+                <div class="call-center">
+                    <div class="icon">
+                        <app-svg-icon [name]="'phone-calling'" [size]="20"></app-svg-icon>
+                    </div>
+                    <span>مرکز تماس</span>
+                    <span class="value">021-91009557</span>
+                </div>
+                <div class="version">{{fullVersion}}</div>
+            </div>
+        </div>
+    </div>
+
+
+</div>

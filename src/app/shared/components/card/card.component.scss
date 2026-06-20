@@ -1,0 +1,112 @@
+.card-header {
+    background-color: transparent;
+    border-bottom: 0;
+    font-size: 1.1rem;
+
+    .page-number {
+        font-size: 0.8rem;
+        margin-left: 0.25rem;
+    }
+}
+
+.action-menu {
+    padding: 0.5rem;
+    min-width: 150px;
+
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        li {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+            padding: 0.5rem;
+            position: relative;
+            cursor: pointer;
+            transition: var(--transition);
+
+            &:hover {
+                color: var(--primary);
+            }
+
+            &+li {
+                margin-top: 0.75rem;
+
+                &:before {
+                    content: '';
+                    height: 1px;
+                    background-color: var(--primary-01);
+                    position: absolute;
+                    top: calc((0.5rem + 0.5rem) / 2 * -1);
+                    left: 0;
+                    right: 0;
+                }
+            }
+        }
+
+    }
+}
+
+.action-buttons-container {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    // padding-right: 0.75rem;
+    margin-right: 0.5rem;
+    position: relative;
+
+    button:hover {
+        color: var(--secondary) !important;
+        border: 1px solid var(--secondary) !important;
+    }
+
+    &.has-divider {
+
+        &:before {
+            content: '';
+            width: 1px;
+            height: 2rem;
+            // background-color: #E7E7E7;
+            position: absolute;
+            right: 0;
+        }
+    }
+}
+
+.cardTitle-parent {
+    color: var(--gray-10);
+    font-size: 14px;
+    padding: 0 0 0 0.3rem;
+}
+
+.cardTitle-child {
+    font-weight: 500;
+    font-size: 14px;
+
+}
+
+
+.box-user-info {
+    padding: 1.5rem;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--gray-10);
+
+    .card-box {
+        display: flex;
+        justify-content: start;
+
+        .item {
+            display: flex;
+            justify-content: start;
+        }
+
+        .circle {
+            padding-left: 1rem;
+            padding-right: 1rem;
+
+        }
+    }
+}

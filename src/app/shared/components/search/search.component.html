@@ -1,0 +1,10 @@
+<div class="search-box-container" [class.visible]="searchIsOpen"  >
+    <input  *ngIf="searchIsOpen"  (blur)="collapsible && !value ? searchIsOpen = false : null" #searchInput name="search" type="search" class="form-control" [placeholder]='searchPlaceholder' [(ngModel)]="value"
+     (search)="onSearchSelected($event)" (keydown.enter)="onSearchSelected($event)" />
+    <div class="button-container" [class.search-btn]="searchIsOpen" [class.search-btn-close]="!searchIsOpen" role="button" (click)="onSearchSelected($event)">
+        <app-svg-icon [name]="'minimalistic-magnifer'" [size]="20" ></app-svg-icon>
+    </div> 
+    <div *ngIf="value!=='' && searchIsOpen" class="button-container clear-btn" role="button" (click)="onClearSearch($event)">
+        <app-svg-icon [name]="'close'" [size]="24" ></app-svg-icon>
+    </div> 
+</div>

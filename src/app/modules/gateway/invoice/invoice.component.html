@@ -1,0 +1,77 @@
+<div *ngIf="!responsiveService.isMobile()" class="main-container">
+
+    <div class="header">
+        <span class="title">30 تراکنش آخر</span>
+    </div>
+
+    <app-table [isLoading]="isLoading" [data]="list" [columns]="tableColumns" [showPagination]="false" [pageSize]="10" [mainActions]="tableMainActions" (buttonAction)="handleButtonAction($event)"></app-table>
+</div>
+
+<div *ngIf="responsiveService.isMobile()" class="main-container mobile">
+    <div *ngFor="let item of list.List" class="data-row">
+        <div class="icon">
+            <app-svg-icon [name]="'broken-money-bill'" [size]="20" class="phone-ring"></app-svg-icon>
+        </div>
+        <div class="data-item">
+            <span>{{item.TransactionTypeTitle}}</span>
+            <span>{{item.VoucherDate}}</span>
+            <div class="d-flex gap-1 align-items-center">
+                <span class="amount">{{item.Amount}}</span>
+                <span class="unit-amount">ریال</span>
+            </div>
+        </div>
+        <div class="arrow" (click)="onViewItem(item)">
+            <app-svg-icon [name]="'alt-arrow-left'"></app-svg-icon>
+        </div>
+    </div>
+</div>
+
+
+<ng-template #transferDetail let-modal>
+    <div class="modal-header">
+        <h6 class="modal-title">جزئیات تراکنش</h6>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <div class="list" [class.mobile]="responsiveService.isMobile()">
+            <div class="item">
+                <div class="title"> شناسه تراکنش</div>
+                <div class="value"> {{detailData.ID}} </div>
+            </div>
+            <div class="item">
+                <div class="title"> شماره سند</div>
+                <div class="value"> {{detailData.VoucherNumber}} </div>
+            </div>
+            <div class="item">
+                <div class="title">    نوع تراکنش</div>
+                <div class="value"> {{detailData.TransactionTypeTitle}} </div>
+            </div>
+            <div class="item">
+                <div class="title">    مبلغ (ریال)</div>
+                <div class="value"> {{detailData.Amount | number}} </div>
+            </div>
+            <div class="item">
+                <div class="title">    تاریخ و ساعت تراکنش</div>
+                <div class="value"> {{detailData.VoucherDate}} | {{detailData.VoucherTime}} </div>
+            </div>
+              <div class="item">
+                <div class="title">    شماره مرجع</div>
+                <div class="value"> {{detailData.RefNumber}} </div>
+            </div>
+             <div class="item full">
+                <div class="title"> طرف حساب</div>
+                <div class="value"> {{detailData.FromFullName}} </div>
+            </div>
+            <div class="item full">
+                <div class="title">     شرح سند</div>
+                <div class="value"> {{detailData.Description}} </div>
+            </div>
+        </div>
+    </div>
+</ng-template>
+
+<ng-template #dateTimeTemplateRef let-item ="item">
+    <div class="d-flex align-items-center gap-2 justify-content-center"> {{item.VoucherTime}} <span>|</span> {{item.VoucherDate}} </div>
+</ng-template>
